@@ -50,7 +50,7 @@
             this.Button1.Name = "Button1";
             this.Button1.Size = new System.Drawing.Size(100, 40);
             this.Button1.TabIndex = 0;
-            this.Button1.Text = "Start";
+            this.Button1.Text = "Video and audio";
             this.Button1.UseVisualStyleBackColor = true;
             this.Button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -164,7 +164,7 @@
             this.Button4.Name = "Button4";
             this.Button4.Size = new System.Drawing.Size(100, 40);
             this.Button4.TabIndex = 12;
-            this.Button4.Text = "Audio";
+            this.Button4.Text = "Only audio";
             this.Button4.UseVisualStyleBackColor = true;
             this.Button4.Click += new System.EventHandler(this.Button4_Click);
             // 
