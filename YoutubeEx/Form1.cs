@@ -111,15 +111,9 @@ namespace YoutubeEx
             }
             catch (System.InvalidOperationException e)
             {
-                MessageBox.Show("(" + e.Message + "):" + " The quality picked is not available.");
-                
+                MessageBox.Show("The quality picked is not available.");
+                WriteLog(e.ToString() + ": The user has chosen a quality that is not available.");
             }
-            /*
-            VideoInfo video = videoInfos
-                .First(info => info.VideoType == VideoType.Mp4 && info.Resolution == vidQuality);
-            textBox2.Text = video.Title;
-            Button1.Enabled = true;
-            Button4.Enabled = true; */
         }
         
 
@@ -234,7 +228,31 @@ namespace YoutubeEx
             timer1.Enabled = true;
             
         }
-        
+
+        public static void WriteLog(string strLog)
+        {
+            StreamWriter log;
+            FileStream fileStream = null;
+            DirectoryInfo logDirInfo = null;
+            FileInfo logFileInfo;
+
+            string logFilePath = Directory.GetCurrentDirectory() + "\\LOGS\\";
+            logFilePath = logFilePath + "Log-" + System.DateTime.Today.ToString("MM-dd-yyyy") + "." + "txt";
+            logFileInfo = new FileInfo(logFilePath);
+            logDirInfo = new DirectoryInfo(logFileInfo.DirectoryName);
+            if (!logDirInfo.Exists) logDirInfo.Create();
+            if (!logFileInfo.Exists)
+            {
+                fileStream = logFileInfo.Create();
+            }
+            else
+            {
+                fileStream = new FileStream(logFilePath, FileMode.Append);
+            }
+            log = new StreamWriter(fileStream);
+            log.WriteLine(strLog);
+            log.Close();
+        }   
 
         
         

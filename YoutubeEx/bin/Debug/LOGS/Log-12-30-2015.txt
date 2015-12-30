@@ -1,0 +1,6 @@
+System.InvalidOperationException: Sequence contains no matching element
+   at System.Linq.Enumerable.First[TSource](IEnumerable`1 source, Func`2 predicate)
+   at YoutubeEx.Form1.SearchVideo(IEnumerable`1 videoInfos) in c:\Users\Sanic\Documents\GitHub\YoutubeEx\YoutubeEx\Form1.cs:line 106: The user has chosen a quality that is not available.
+System.InvalidOperationException: Sequence contains no matching element
+   at System.Linq.Enumerable.First[TSource](IEnumerable`1 source, Func`2 predicate)
+   at YoutubeEx.Form1.SearchVideo(IEnumerable`1 videoInfos) in c:\Users\Sanic\Documents\GitHub\YoutubeEx\YoutubeEx\Form1.cs:line 106: The user has chosen a quality that is not available.
