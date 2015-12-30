@@ -101,11 +101,25 @@ namespace YoutubeEx
         //Searches for the video when called + activate the download button.
         private void SearchVideo(IEnumerable<VideoInfo> videoInfos)
         {
-            VideoInfo video = videoInfos
+            try
+            {
+                VideoInfo video = videoInfos
                 .First(info => info.VideoType == VideoType.Mp4 && info.Resolution == vidQuality);
             textBox2.Text = video.Title;
             Button1.Enabled = true;
             Button4.Enabled = true;
+            }
+            catch (System.InvalidOperationException e)
+            {
+                MessageBox.Show("(" + e.Message + "):" + " The quality picked is not available.");
+                
+            }
+            /*
+            VideoInfo video = videoInfos
+                .First(info => info.VideoType == VideoType.Mp4 && info.Resolution == vidQuality);
+            textBox2.Text = video.Title;
+            Button1.Enabled = true;
+            Button4.Enabled = true; */
         }
         
 
